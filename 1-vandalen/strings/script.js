@@ -7,13 +7,19 @@ window.onload = function(){
 		// Plats för förändring.		
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-
-			if(str.length === 0 || (/^\s*$/).test(str))
+			
+			//if(str typeof === 'string')
+			if(!str.length || (/^\s*$/).test(str))
 			{
 				return "Skriv in en text du vill formatera!";
 			}
 			str = str.replace(/A/gi, "#");
 			var omv = "";
+			
+			/*
+			if(str.charAt(i) === str.charAt(i).toUpperCase()){ // det var upper hela tiden konvertera till lower
+			}else{} //det var inteuppercase så konvertera till uppercase
+			*/
 			for (var i = 0; i < str.length; i++) 
 			{
 	            if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90 || str.charCodeAt(i) >= 192 && str.charCodeAt(i) <= 214) 

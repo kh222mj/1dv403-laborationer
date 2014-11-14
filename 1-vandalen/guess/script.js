@@ -12,25 +12,25 @@ window.onload = function(){
 				{
 					return [false, "Talet är utanför intervallet 0 - 100"];
 				}
-				if(number < secret)
-				{
+				else{
 					gissningar++;
-					return [false, "Det hemliga talet är högre!"];
+				
+					if(number < secret)
+					{
+						return [false, "Det hemliga talet är högre!"];
+					}
+					if(number > secret)
+					{
+						return [false, "Det hemliga talet är lägre!"];
+					}
+					if(number == secret)
+					{
+						return [true, "Grattis du vann! Det hemliga talet var " + secret + " och du behövde " + gissningar + " gissningar för att hitta det."];
+					}
 				}
-				if(number > secret)
-				{
-					gissningar++;
-					return [false, "Det hemliga talet är lägre!"];
-				}
-				if(number == secret)
-				{
-					gissningar++;
-					return [true, "Grattis du vann! Det hemliga talet var " + secret + " och du behövde " + gissningar + " gissningar för att hitta det."];
-				}
-				else 
-				{
-					return [false, "FEL! Ange ett tal mellan 0 - 100"];					
-				}
+				
+				return [false, "FEL! Ange ett tal mellan 0 - 100"];					
+				
 	};
 	
 	// ------------------------------------------------------------------------------
