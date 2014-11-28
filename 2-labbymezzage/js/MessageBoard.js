@@ -14,7 +14,8 @@ var klick = function() {
     
     var myText = document.getElementById("myText");
     var text = myText.value;
-    var mess = new Message(text, new Date());
+    var date = new Date();
+    var mess = new Message(text, date);
     
     MessageBoard.messages.push(mess);
     
