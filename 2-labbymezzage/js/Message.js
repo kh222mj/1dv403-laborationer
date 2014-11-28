@@ -24,10 +24,12 @@ Message.prototype.toString = function() {
 };
 
 Message.prototype.getHTMLText = function() {
-    return this.getText();
+    var message = this.getText();
+    return message.replace(/[\n\r]/g, "<br />");
 };
 
 Message.prototype.getDateText = function() {
-    return this.getDate();
+    var date = new Date();
+    return date;
 };
 

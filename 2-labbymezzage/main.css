@@ -42,11 +42,9 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 p {
-font: 20px Tahoma;
-text-align: right;
+font: 25px Tahoma;
+text-align: left;
 margin-right: 20px;
-padding-bottom: 5px;
-
 }
 
 #wrapper {
@@ -80,15 +78,34 @@ input {
     margin-right: 20px;
     margin-top: 5px;
 }
-#meddelanden {
-    margin-top: 50px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    background: #FFFFFF;
-    text-align: center;
-    margin-right: 70px;
-    margin-left: 70px;
-}
 #dynamicImg {
     display: block;
+}
+#counter {
+    font: 20px Tahoma;
+    text-align: right;
+    margin-right: 20px;
+    padding-bottom: 5px;
+}
+#the_div {
+    padding: 0px;
+    display: block;
+}
+#the_div p {
+    margin-left: 5px;
+}
+#the_div img {
+    float: right;
+    margin: 5px;
+}
+#the_div article {
+    margin-bottom: 20px;
+    text-align: left;
+    margin-right: 0px;
+    margin-left: 0px;
+    border: 1px solid grey;
+    margin-bottom: 15px;
+}
+#meddelanden {
+    margin-top: 15px;
 }

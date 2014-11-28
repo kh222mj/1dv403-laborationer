@@ -4,6 +4,8 @@ var MessageBoard = {
     messages: [],
     
     init: function() {
+        document.getElementById("knapp").onclick = klick;
+        document.getElementById("myText").onkeypress = keyPress;
     }
 };
 window.onload = MessageBoard.init;
@@ -61,10 +63,23 @@ var renderMessages = function() {
 
 var removeMessage = function(messageID){
     
-    MessageBoard.messages.splice(messageID, 1);
-    
-    var i = MessageBoard.messages.length;
-    document.getElementById("counter").innerHTML = "Antal Meddelanden: " + i;
-    
-    renderMessages();
+    var r = confirm("Vill du verkligen radera meddelandet?");
+    if(r === true){
+        MessageBoard.messages.splice(messageID, 1);
+        
+        var i = MessageBoard.messages.length;
+        document.getElementById("counter").innerHTML = "Antal Meddelanden: " + i;
+        
+        renderMessages();
+    }
+};
+
+var keyPress = function(e) {
+    var keyCode = e.keyCode;
+    if(e.shiftKey){
+        return;
+    }
+    if(keyCode == 13){
+        klick();
+    }
 };
