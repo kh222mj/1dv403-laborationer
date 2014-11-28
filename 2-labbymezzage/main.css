@@ -75,7 +75,7 @@ textarea {
 input {
     display: block;
     float: right;
-    margin-right: 20px;
+    margin-right: 70px;
     margin-top: 5px;
 }
 #dynamicImg {
@@ -84,7 +84,7 @@ input {
 #counter {
     font: 20px Tahoma;
     text-align: right;
-    margin-right: 20px;
+    margin-right: 70px;
     padding-bottom: 5px;
 }
 #the_div {
@@ -108,4 +108,12 @@ input {
 }
 #meddelanden {
     margin-top: 15px;
+}
+#datumP {
+    font: 12px Tahoma;
+    text-align: right;
+    margin-right: 5px;
+}
+textarea {
+    font: 25px Tahoma;
 }

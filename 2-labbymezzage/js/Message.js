@@ -29,7 +29,30 @@ Message.prototype.getHTMLText = function() {
 };
 
 Message.prototype.getDateText = function() {
-    var date = new Date();
-    return date;
+    var now = new Date();
+    var day = now.getDate();
+    var monthNu = now.getMonth();
+    var monthNames = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
+    var month = monthNames[monthNu];
+    var year = now.getFullYear();
+    return day + "e" + " " + month + " " + year;
+};
+
+Message.prototype.getTimeText = function(){
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    
+    if(hours < 10){
+        hours = "0" + hours;
+    }
+    if(minutes < 10){
+        minutes = "0" + minutes;
+    }
+    if(seconds < 10){
+        seconds = "0" + minutes;
+    }
+    return hours + ":" + minutes + ":" + seconds;
 };
 

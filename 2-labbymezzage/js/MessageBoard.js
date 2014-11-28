@@ -46,10 +46,16 @@ var renderMessage = function(messageID) {
         alert("Inlägget skapades den " + MessageBoard.messages[messageID].getDateText());
     };
     
+    var datum = document.createElement("p");
+    datum.innerHTML = MessageBoard.messages[messageID].getTimeText();
+    datum.id = "datumP";
+    di.appendChild(datum);
+    
     var div = document.getElementById("the_div");
-    div.appendChild(date);
     div.appendChild(img);
+    div.appendChild(date);
     div.appendChild(di);
+    
 };
 
 var renderMessages = function() {
