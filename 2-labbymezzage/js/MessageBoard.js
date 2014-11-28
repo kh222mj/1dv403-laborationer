@@ -1,32 +1,32 @@
 "use strict";
+
 var MessageBoard = {
     
     messages: [],
     
-    init: function() {
-        document.getElementById("knapp").onclick = klick;
-        document.getElementById("myText").onkeypress = keyPress;
-    }
-};
-window.onload = MessageBoard.init;
-
-var klick = function() {
+    init : function() {
+        document.getElementById("knapp").onclick = MessageBoard.klick;
+        document.getElementById("myText").onkeypress = MessageBoard.keyPress;
+    },
     
-    var myText = document.getElementById("myText");
-    var text = myText.value;
-    var date = new Date();
-    var mess = new Message(text, date);
+    klick : function() {
     
-    MessageBoard.messages.push(mess);
+        var myText = document.getElementById("myText");
+        var text = myText.value;
+        var date = new Date();
+        var mess = new Message(text, date);
+        
+        MessageBoard.messages.push(mess);
+        
+        var i = MessageBoard.messages.length - 1;
+        MessageBoard.renderMessage(i);
+        i++;
+        
+        document.getElementById("counter").innerHTML = "Antal Meddelanden: " + i;
+        myText.value = "";
+    },
     
-    var i = MessageBoard.messages.length - 1;
-    renderMessage(i);
-    i++;
-    
-    document.getElementById("counter").innerHTML = "Antal Meddelanden: " + i;
-};
-
-var renderMessage = function(messageID) {
+    renderMessage : function(messageID) {
     
     var di = document.createElement("article");
     var p = document.createElement("p");
@@ -37,7 +37,7 @@ var renderMessage = function(messageID) {
     img.src = "pics/remove.png";
     img.id = "imgRemove";
     img.onclick = function() {
-        removeMessage(messageID);        
+        MessageBoard.removeMessage(messageID);        
     };
     
     var date = document.createElement("img");
@@ -57,18 +57,19 @@ var renderMessage = function(messageID) {
     div.appendChild(date);
     div.appendChild(di);
     
-};
-
-var renderMessages = function() {
+    },
+    
+    renderMessages : function() {
     
     document.getElementById("the_div").innerHTML = "";
     
     for(var i = 0; i < MessageBoard.messages.length; i++){
-        renderMessage(i);
-    }
-};
-
-var removeMessage = function(messageID){
+        MessageBoard.renderMessage(i);
+        }
+    
+    },
+    
+    removeMessage : function(messageID){
     
     var r = confirm("Vill du verkligen radera meddelandet?");
     if(r === true){
@@ -76,17 +77,28 @@ var removeMessage = function(messageID){
         
         var i = MessageBoard.messages.length;
         document.getElementById("counter").innerHTML = "Antal Meddelanden: " + i;
-        
-        renderMessages();
-    }
-};
-
-var keyPress = function(e) {
+        MessageBoard.renderMessages();
+        }   
+    },
+    
+    keyPress : function(e) {
     var keyCode = e.keyCode;
-    if(e.shiftKey){
-        return;
-    }
-    if(keyCode == 13){
-        klick();
+        if(e.shiftKey){
+            return;
+        }
+        if(keyCode == 13){
+            MessageBoard.klick();
+            e.preventDefault();
+        }
     }
 };
+window.onload = MessageBoard.init;
+
+
+
+
+
+
+
+
+

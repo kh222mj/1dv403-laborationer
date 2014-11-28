@@ -104,10 +104,11 @@ input {
     margin-right: 0px;
     margin-left: 0px;
     border: 1px solid grey;
-    margin-bottom: 15px;
 }
 #meddelanden {
     margin-top: 15px;
+    margin-right: 70px;
+    margin-left: 70px;
 }
 #datumP {
     font: 12px Tahoma;
