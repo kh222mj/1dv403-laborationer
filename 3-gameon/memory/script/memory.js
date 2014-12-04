@@ -37,10 +37,10 @@ var Memory = {
             }
             tabell.appendChild(tr);
         }
-        Memory.getStuff();
+        Memory.doStuff();
     },
     
-    getStuff : function(){
+    doStuff : function(){
         var aS = document.querySelectorAll("#tabell a");
         
         var counter = 0;
@@ -52,34 +52,44 @@ var Memory = {
         aS.forEach(function(a){
             
             a.addEventListener("click", function(){
+                
                 var img = a.firstChild;
                 imgArray.push(img);
                 var test = "";
                 
-                if(imgArray[0] == imgArray[1]){
+                //Redan vänd
+                if (img.className == "visible"){
+                    alert("Den här är redan vänd!");
+                    imgArray = [];
+                    return;
+                }
+                // Trycker på samma
+                if (imgArray[0] == imgArray[1]){
                     imgArray[0].classList.toggle("hidden");
                     imgArray = [];
                     alert("Tryck inte på samma!");
                     return;
                 }
                 
+                // Skapa jämförelse-objekt
                 if (imgArray.length == 2){
                     test = imgArray[1].getAttribute("src");
                     img.classList.toggle("hidden");
                 }
                 
+                // Samma src code? Bilderna stämmer
                 if (imgArray[0].getAttribute("src") == test){
                     img.className = "visible";
                     imgArray = [];
                     counter++;
                     if (counter == Memory.array.length / 2){
-                        alert("Du klarade spelet!");
+                        alert("Du klarade spelet! Nu får du en ny omgång att lösa!");
                         location.reload(true);
-                        alert("Ny omgång!");
                     }
                     return;
                 }
-                
+
+                // Standard
                 if (imgArray.length == 1){
                     img.classList.toggle("hidden");
                 }
@@ -91,8 +101,7 @@ var Memory = {
                     imgArray = []; }, 1000);
                 }
             });
-            
-        });
+        });           
     }
 };
 window.onload = Memory.init;
