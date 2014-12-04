@@ -52,7 +52,6 @@ margin-right: 20px;
     margin: auto;
     text-align: left;
     background: #95B1FF;
-    padding-bottom: 5px;
 }
 #main_section {
     margin-bottom: 300px;
@@ -69,4 +68,20 @@ article {
     border: 1px solid red;
     margin-left: auto;
     margin-right: auto;
+    background: #FFFFFF;
+    margin-top: 20px;
+}
+#tabell td {
+    padding: 40px;
+}
+a {
+	background-image: url("pics/0.png");
+	background-repeat: no-repeat;
+	border: 1px solid red;
+}
+.visible {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
 }
