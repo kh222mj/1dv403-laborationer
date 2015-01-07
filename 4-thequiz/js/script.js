@@ -1,11 +1,13 @@
-var nextURL = "";
-var nextQuest = "http://vhost3.lnu.se:20080/question/1";
-var count = 0;
-var quest = 0;
-var tries = [];
-var wrong = 0;
+"use strict";
 
 window.onload = function(){
+    
+    var nextURL = "";
+    var nextQuest = "http://vhost3.lnu.se:20080/question/1";
+    var count = 0;
+    var quest = 0;
+    var tries = [];
+    var wrong = 0;
     
     var createP = function(str){
           var p = document.createElement("p");
@@ -34,6 +36,10 @@ window.onload = function(){
         getQuest();
     
     document.getElementById("send").addEventListener("click", function(){
+       if(quest === 6){
+           return;
+       }
+       
        count++;
        var xhr = new XMLHttpRequest();
        xhr.onreadystatechange = function(){
