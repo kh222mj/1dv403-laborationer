@@ -47,6 +47,9 @@ font: 25px Tahoma;
 text-align: left;
 margin-right: 20px;
 }
+#container{
+    display: block;
+}
 #footer{
     padding: 5px;
     display: block;
@@ -54,4 +57,26 @@ margin-right: 20px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: 50px;
+}
+#window{
+    border: 2px solid blue;
+    width: 25%;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+#content{
+    display: block;
+    background: red;
+    padding-bottom: 500px;
+}
+#top{
+    display: block;
+    background: green;
+    padding-bottom: 60px;
+}
+#bottom{
+    display: block;
+    padding-bottom: 25px;
+    background: yellow;
 }
