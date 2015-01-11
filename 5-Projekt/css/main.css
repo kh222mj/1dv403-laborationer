@@ -25,7 +25,6 @@ display: block;
 }
 body {
 line-height: 1;
-background: url("pics/background1.jpg");
 }
 ol, ul {
 list-style: none;
@@ -43,40 +42,77 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 p {
-font: 25px Tahoma;
 text-align: left;
 margin-right: 20px;
+color: white;
 }
 #container{
     display: block;
 }
 #footer{
     padding: 5px;
-    display: block;
-    border-top: 2px solid white;
+    border-top: 1px solid black;
     position: fixed;
     bottom: 0;
     width: 100%;
     margin-top: 50px;
+    background-image: linear-gradient(#132B3E, #8BC2F0);
 }
 #window{
-    border: 2px solid blue;
+    border: 2px solid black;
     width: 25%;
     margin-left: 100px;
     margin-top: 100px;
 }
 #content{
-    display: block;
-    background: red;
-    padding-bottom: 500px;
+    background: #4F7CA2;
+    overflow: auto;
+    height: 500px;
 }
 #top{
     display: block;
-    background: green;
+    background: #132B3E;
     padding-bottom: 60px;
 }
 #bottom{
     display: block;
-    padding-bottom: 25px;
-    background: yellow;
+    padding-bottom: 16px;
+    background: #132B3E;
+}
+#arrow{
+    display: block;
+    float: left;
+}
+#exit{
+    display: block;
+    float: right;
+}
+#pLeft{
+    display: block;
+    float: left;
+    margin-top: 2px;
+}
+#statusP{
+    display: block;
+    float: left;
+}
+#thumbPictures{
+    background: #8BC2F0;
+    display: block;
+    float: left;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid black;
+}
+#center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#ajaxLoader{
+    display: block;
+    float: left;
+}
+#myBody{
+    background: url("pics/background1.jpg");
 }
